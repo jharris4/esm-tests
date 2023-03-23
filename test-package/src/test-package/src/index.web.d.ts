@@ -1,1 +1,0 @@
-export declare function isEvenFunction(val: number): boolean;
