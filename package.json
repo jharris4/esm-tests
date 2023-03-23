@@ -1,0 +1,41 @@
+{
+  "name": "esm-tests",
+  "version": "1.0.0",
+  "description": "testing out esm with package.json exports",
+  "type": "module",
+  "scripts": {
+    "clean-web": "del-cli distVite* distWebpack*",
+    "build-webpack": "webpack -c webpack.config.js",
+    "build-vite": "vite build -c vite.config.js",
+    "build-web": "npm run clean-web && npm run build-webpack && npm run build-vite",
+    "build-node": "node src/main.node.js",
+    "clean-ts": "del-cli distTs*",
+    "build-ts-node": "tsc -p tsconfig.node.json",
+    "build-ts-web": "tsc -p tsconfig.web.json",
+    "build-ts": "npm run clean-ts && npm run build-ts-node && npm run build-ts-web",
+    "copy-test-package": "cpy ./test-package/* ./node_modules/test-package/*",
+    "link-test-package": "npm link ./test-package",
+    "build": "npm run build-web && npm run build-node && npm run build-ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jharris4/antlr4-cjs-esm-tests.git"
+  },
+  "author": "jharris4",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jharris4/antlr4-cjs-esm-tests/issues"
+  },
+  "homepage": "https://github.com/jharris4/antlr4-cjs-esm-tests#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^9.1.2",
+    "cpy-cli": "^4.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.2.1",
+    "webpack": "^5.76.2",
+    "webpack-cli": "^5.0.1",
+    "del-cli": "^5.0.0"
+  }
+}
