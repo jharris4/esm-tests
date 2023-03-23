@@ -3,11 +3,12 @@
     "module": "NodeNext",
     "moduleResolution": "nodenext",
     "target": "ES6",
-    "outDir": "distTsNode"
+    "outDir": "distTsNode",
+    "declaration": true
   },
   "ts-node": {
     "esm": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*.ts"],
   "exclude": ["src/main.web.ts"]
 }

@@ -3,7 +3,8 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "target": "ES6",
-    "outDir": "distTsWeb"
+    "outDir": "distTsWeb",
+    "declaration": true
   },
   "ts-node": {
     "esm": true
